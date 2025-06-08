@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="team" style="background: white;">
+  <div class="container">
+    <h2>Meet the Team</h2>
+    <div class="team-grid">
+      {% for member in team %}
+      <div class="team-card" data-aos="zoom-in">
+        <img src="{{ member.photo.url }}" alt="{{ member.name }}">
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.role }}</p>
+        <small>{{ member.bio }}</small>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

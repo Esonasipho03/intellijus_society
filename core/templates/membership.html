@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="membership" data-aos="fade-up" style="background: url('/static/images/membership-bg.jpg') center/cover no-repeat; padding: 40px 20px;">
+  <div class="container glass-card" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; justify-content: center; padding: 2rem; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
+    
+    <!-- Left: Info and actions -->
+    <div style="flex: 1 1 300px;">
+      <h2 style="margin-bottom: 1rem; color: gold;">Join Our Legal Community</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 1rem; color: black;">
+        Become a member for just <strong>R20/year</strong> and get exclusive access to events, legal resources, and networking opportunities.
+      </p>
+      <ul style="list-style: none; padding-left: 0; margin-bottom: 1.5rem; color: black;">
+        <li>🎓 Open to all NWU students</li>
+        <li>📝 Sign our simple Code of Conduct</li>
+        <li>
+          <a href="#membership-instructions" style="color: black; text-decoration: underline; cursor: pointer;">
+            📥 Download the membership form and submit it to join
+          </a>
+        </li>
+      </ul>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="{% url 'download_form' %}" class="btn" target="_blank" rel="noopener noreferrer"
+           style="flex: 1 1 180px; padding: 0.75rem; text-align: center; background-color: gold; color: black; border-radius: 5px; font-weight: 600; text-decoration: none;">
+          📄 Download Form
+        </a>
+        <a href="{% url 'download_constitution' %}" class="btn" target="_blank" rel="noopener noreferrer"
+           style="flex: 1 1 180px; padding: 0.75rem; text-align: center; background-color: black; color: gold; border-radius: 5px; font-weight: 600; text-decoration: none;">
+          📜 View Constitution
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Image -->
+    <div style="flex: 1 1 280px; text-align: center;">
+      <a href="{% url 'download_form' %}" target="_blank" rel="noopener noreferrer">
+        <img src="/static/images/membership.png" alt="Click to Download Membership Form"
+             style="max-width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); cursor: pointer;" />
+      </a>
+      <p style="color: gray; font-size: 0.9rem; margin-top: 0.5rem;">Click the image to download the membership form.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- New instructions section -->
+<section id="membership-instructions" class="membership-instructions" style="max-width: 700px; margin: 3rem auto; background: #fff8dc; padding: 2rem 2.5rem; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">
+  <h3 style="color: #b8860b; margin-bottom: 1rem; text-align: center;">How to Complete Your Membership</h3>
+  <ol style="color: #333; font-size: 1.05rem; line-height: 1.6;">
+    <li><strong>Download the Membership Form:</strong> Click the <em>Download Form</em> button or the image above to get the form on your device.</li>
+    <li><strong>Print the Form:</strong> Print the downloaded form on A4 paper for easy filling.</li>
+    <li><strong>Fill in Your Details:</strong> Complete all required fields carefully, including your full name, contact information, and student number.</li>
+    <li><strong>Read and Sign the Code of Conduct:</strong> Make sure to read the Code of Conduct included in the form and sign it to agree to the community rules.</li>
+    <li><strong>Submit the Form:</strong>
+      <ul style="list-style-type: disc; margin-left: 1.5rem;">
+        <li>Hand-deliver the completed form to the IntelliJus Law Society office during working hours.</li>
+        <li>OR scan the completed and signed form and email it to <a href="mailto:membership@intellijuslaw.com" style="color: #b8860b;">membership@intellijuslaw.com</a>.</li>
+      </ul>
+    </li>
+    <li><strong>Pay the Membership Fee:</strong> Pay the annual fee of <strong>R20</strong> at the office or via the payment methods mentioned on the form.</li>
+    <li><strong>Confirmation:</strong> After submitting the form and payment, you will receive a confirmation email with details about upcoming events and member benefits.</li>
+  </ol>
+  <p style="text-align: center; color: #555; font-style: italic; margin-top: 1.5rem;">
+    For any questions, please contact us at <a href="mailto:info@intellijuslaw.com" style="color: #b8860b;">info@intellijuslaw.com</a>.
+  </p>
+</section>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (max-width: 768px) {
+    .membership .container {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .membership h2 {
+      text-align: center;
+    }
+
+    .membership ul {
+      padding-left: 1rem;
+    }
+
+    .membership-instructions {
+      padding: 1rem 1.5rem;
+      margin: 2rem 1rem;
+    }
+  }
+
+  .btn:hover {
+    filter: brightness(85%);
+  }
+</style>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %} 
+{% block content %}
+<section class="contact-section" style="background-image: url('/static/images/contact-bg.jpg'); background-size: cover; background-position: center; padding: 60px 0;">
+  <div class="container">
+    
+    <div class="glass-card contact-card" style="max-width: 900px; margin: auto; padding: 40px; border-radius: 20px; box-shadow: 0 8px 30px rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
+      <div class="row" style="display: flex; flex-wrap: wrap; gap: 40px;">
+        
+        <!-- Contact Info -->
+        <div class="contact-info" style="flex: 1; min-width: 250px;">
+          <h2 style="margin-bottom: 20px; font-size: 28px;">Get in Touch</h2>
+          <p style="margin-bottom: 15px;">Have any questions or need assistance? Feel free to contact us using the form or via our social platforms below.</p>
+          <p><strong>Email:</strong> intellijuslawsociety@gmail.com</p>
+          <p><strong>Phone:</strong> 072 973 9186</p>
+
+          <div class="social-links" style="margin-top: 20px;">
+            <ul style="list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 10px;">
+                <a href="https://web.facebook.com/people/Nwu-Intellijus/pfbid0XWLbdss8EKJKKm7JPS1q2tdS8wtPWT1hu72MnhF9tuSsVCogq6k6si4TSPHJ1iPol/?mibextid=wwXIfr&rdid=PuXuCaJyhPNjpAiU&share_url=https%3A%2F%2Fweb.facebook.com%2Fshare%2F16AYedAgev%2F%3Fmibextid%3DwwXIfr%26_rdc%3D1%26_rdr"
+                   target="_blank" style="text-decoration: none; color: inherit;">
+                  <img src="/static/images/facebook.png" alt="Facebook" style="height: 30px; margin-right: 10px;">
+                  Nwu Intellijus
+                </a>
+              </li>
+              <li style="margin-bottom: 10px;">
+                <a href="https://wa.me/27729739186" target="_blank" style="text-decoration: none; color: inherit;">
+                  <img src="/static/images/whatsapp.png" alt="WhatsApp" style="height: 30px; margin-right: 10px;">
+                  WhatsApp Chat
+                </a>
+              </li>
+              <li style="margin-bottom: 10px;">
+                <a href="https://www.instagram.com/intellijus_nwu?igsh=MThreTRob3l5cGVlMQ%3D%3D&utm_source=qr"
+                   target="_blank" style="text-decoration: none; color: inherit;">
+                  <img src="/static/images/instagram.png" alt="Instagram" style="height: 30px; margin-right: 10px;">
+                  intellijus_nwu
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@intellijus?_t=ZM-8wi5DQ9XnXy&_r=1" target="_blank" style="text-decoration: none; color: inherit;">
+                  <img src="/static/images/tiktok.png" alt="TikTok" style="height: 30px; margin-right: 10px;">
+                  IntelliJus on TikTok
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form" style="flex: 1; min-width: 250px;">
+          <form method="post" style="display: flex; flex-direction: column; gap: 15px;">
+            {% csrf_token %}
+            {% for field in form %}
+              <div>
+                {{ field.label_tag }}<br>
+                {{ field }}
+                {% if field.errors %}
+                  <div style="color: red; font-size: 0.9em;">{{ field.errors|striptags }}</div>
+                {% endif %}
+              </div>
+            {% endfor %}
+            <button type="submit" style="padding: 10px 20px; background-color: gold; color: black; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">Send</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    
+  </div>
+</section>
+{% endblock %}
