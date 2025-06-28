@@ -102,3 +102,11 @@ def sitemap_xml(request):
   </url>
 </urlset>'''
     return HttpResponse(content, content_type='application/xml')
+
+from django.views.static import serve
+import os
+from django.conf import settings
+
+def google_verification_file(request):
+    file_path = os.path.join(settings.BASE_DIR, 'core', 'static', 'google3c1cb1b5cdd53735.html')
+    return serve(request, os.path.basename(file_path), os.path.dirname(file_path))

@@ -3,6 +3,7 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 from core.views import sitemap_xml
+from core.views import google_verification_file
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
@@ -16,7 +17,7 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('robots.txt', views.robots_txt),
     path('sitemap.xml', sitemap_xml, name='sitemap'),
-
+    path('google3c1cb1b5cdd53735.html', google_verification_file),
 
 ]
 
