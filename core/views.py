@@ -89,3 +89,16 @@ def robots_txt(request):
         "Sitemap: https://intellijus-society.onrender.com/sitemap.xml"
     ]
     return HttpResponse("\n".join(lines), content_type="text/plain")
+
+
+
+def sitemap_xml(request):
+    content = '''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://intellijus-society.onrender.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>'''
+    return HttpResponse(content, content_type='application/xml')

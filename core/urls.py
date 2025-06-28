@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-
+from core.views import sitemap_xml
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
@@ -15,6 +15,7 @@ urlpatterns = [
     path('download-constitution/', views.download_constitution, name='download_constitution'),  
     path('gallery/', views.gallery, name='gallery'),
     path('robots.txt', views.robots_txt),
+    path('sitemap.xml', sitemap_xml, name='sitemap'),
 
 
 ]
