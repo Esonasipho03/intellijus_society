@@ -14,7 +14,8 @@ urlpatterns = [
     path('download-form/', views.download_form, name='download_form'),
     path('download-constitution/', views.download_constitution, name='download_constitution'),  
     path('gallery/', views.gallery, name='gallery'),
-    
+    path('robots.txt', views.robots_txt),
+
 
 ]
 

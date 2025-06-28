@@ -79,3 +79,13 @@ def gallery(request):
 def gallery(request):
     events = Event.objects.filter(date__gte=date.today()).order_by('date')
     return render(request, 'gallery.html', {'events': events})
+
+from django.http import HttpResponse
+
+def robots_txt(request):
+    lines = [
+        "User-agent: *",
+        "Disallow:",
+        "Sitemap: https://your-site.onrender.com/sitemap.xml"
+    ]
+    return HttpResponse("\n".join(lines), content_type="text/plain")
